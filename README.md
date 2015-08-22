@@ -5,7 +5,7 @@
 
 ### What is this?
 
-These are the Docker images used by the [LaraDock Starter](https://github.com/LaraDock/starter). If you don't know what the **LaraDock Starter** is, than you probably don't know where you are. Check this [Documentation](https://github.com/LaraDock/starter).
+These are the Docker images used by the [laradock/laradock](https://github.com/LaraDock/laradock) repository. If you don't know what the **LaraDock** is, than you probably don't know where you are. Check this [Documentation](https://github.com/LaraDock/laradock).
 
 ### Build your own Image
 
@@ -31,7 +31,7 @@ All the images are built from [phusion/baseimage](https://github.com/phusion/bas
 
 
 ### Questions
-If you have any questions please share it with us on [![Join the chat at https://gitter.im/LaraDock/starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LaraDock/starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or email me on (mahmoud@zalt.me).
+If you have any questions please share it with us on [![Join the chat at https://gitter.im/LaraDock/docker-images](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LaraDock/docker-images?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or email me on (mahmoud@zalt.me).
 
 
 
@@ -45,7 +45,7 @@ All contributions are welcomed.
 
 ## Support
 
-[Issues](https://github.com/laradock/images/issues) on Github.
+[Issues](https://github.com/laradock/docker-images/issues) on Github.
 
 
 
