@@ -1,6 +1,6 @@
-## Github URL: https://github.com/LaraDock/images/tree/master/mysql
+## Github URL: https://github.com/LaraDock/docker-images/tree/master/mysql
 ## Docker URL: https://hub.docker.com/r/laradock/mysql
-###################################################################
+##########################################################################
 FROM phusion/baseimage:0.9.17
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
