@@ -15,8 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get install -y --force-yes nginx \
     php5-fpm php5-cli php5-mysql php5-mcrypt \
-    php5-curl php5-gd php5-intl \
-    unixODBC-dev php5-odbc && \
+    php5-curl php5-gd php5-intl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* \
            /tmp/* \
@@ -50,13 +49,3 @@ VOLUME ["/var/www", "/etc/nginx/sites-available", "/etc/nginx/sites-enabled"]
 WORKDIR /var/www
 
 EXPOSE 80
-
-# Configure odbc
-FROM php
-RUN apt-get update && apt-get install -y unixODBC-dev && rm -rf /var/lib/apt/lists/*
-RUN set -x \
-    && cd /usr/src/php/ext/odbc \
-    && phpize \
-    && sed -ri 's@^ *test +"\$PHP_.*" *= *"no" *&& *PHP_.*=yes *$@#&@g' configure \
-    && ./configure --with-unixODBC=shared,/usr \
-    && docker-php-ext-install odbc
