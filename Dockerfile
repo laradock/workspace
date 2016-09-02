@@ -6,6 +6,8 @@
 
 FROM webdevops/base:ubuntu-16.04
 
+MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+
 # Add the "PHP 7" ppa
 RUN add-apt-repository -y ppa:ondrej/php
 
