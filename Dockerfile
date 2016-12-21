@@ -42,6 +42,7 @@ RUN apt-get update && \
         php7.0-sqlite \
         php7.0-sqlite3 \
         php7.0-zip \
+        php7.0-bcmath \
         php7.0-memcached \
         php7.0-gd \
         pkg-config \
