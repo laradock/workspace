@@ -44,8 +44,8 @@ RUN apt-get update && \
         php7.1-zip \
         php7.1-memcached \
         php7.1-gd \
+        php7.1-dev \
         pkg-config \
-        php-dev \
         libcurl4-openssl-dev \
         libedit-dev \
         libssl-dev \
