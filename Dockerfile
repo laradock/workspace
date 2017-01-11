@@ -45,8 +45,8 @@ RUN apt-get update && \
         php7.0-bcmath \
         php7.0-memcached \
         php7.0-gd \
+        php7.0-dev \
         pkg-config \
-        php-dev \
         libcurl4-openssl-dev \
         libedit-dev \
         libssl-dev \
