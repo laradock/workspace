@@ -17,7 +17,7 @@ ENV LC_CTYPE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV TERM xterm
 
-ARG PHP_VERSION=${PHP_VERSION:-70}
+ARG PHP_VERSION=${PHP_VERSION:-71}
 
 # Add the PHP ppa
 RUN apt-get install -y software-properties-common && \
