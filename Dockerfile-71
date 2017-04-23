@@ -43,6 +43,7 @@ RUN apt-get update && \
         php7.1-sqlite \
         php7.1-sqlite3 \
         php7.1-zip \
+        php7.1-bcmath \
         php7.1-memcached \
         php7.1-gd \
         php7.1-dev \
