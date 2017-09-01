@@ -34,6 +34,7 @@ RUN apt-get update && \
         php5.6-cli \
         php5.6-common \
         php5.6-curl \
+        php5.6-intl \
         php5.6-json \
         php5.6-xml \
         php5.6-mbstring \
