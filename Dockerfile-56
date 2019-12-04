@@ -27,6 +27,8 @@ RUN apt-get install -y software-properties-common && \
 #--------------------------------------------------------------------------
 #
 
+RUN echo 'DPkg::options { "--force-confdef"; };' >> /etc/apt/apt.conf
+
 # Install "PHP Extentions", "libraries", "Software's"
 RUN apt-get update && \
     apt-get upgrade -y && \
