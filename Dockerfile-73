@@ -57,6 +57,7 @@ RUN apt-get update && \
         libxml2-dev \
         xz-utils \
         libsqlite3-dev \
+        rsync \
         sqlite3 \
         git \
         curl \
