@@ -62,6 +62,7 @@ RUN apt-get update && \
         curl \
         vim \
         nano \
+        tree \
         postgresql-client \
     && apt-get clean
 
