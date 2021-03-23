@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: master
+    branches: '**'
   schedule:
   - cron: 0 0 * * 6
 
@@ -22,7 +22,7 @@ jobs:
         docker build . --file Dockerfile-${{ matrix.php_version }} --tag laradock/workspace:latest-${TAG_VERSION}
         docker image ls
     - name: Push image to Docker hub
-      if: success()
+      if: ${{ success() && (github.ref == 'refs/heads/master') }}
       env:
         PHP_VERSION: ${{ matrix.php_version }}
       run: |
