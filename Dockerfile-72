@@ -17,22 +17,20 @@ ENV LC_CTYPE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV TERM xterm
 
-# Add the "PHP 7" ppa
-RUN apt-get install -y software-properties-common && \
-    add-apt-repository -y ppa:ondrej/php
-
-#
-#--------------------------------------------------------------------------
-# Software's Installation
-#--------------------------------------------------------------------------
-#
-
-RUN echo 'DPkg::options { "--force-confdef"; };' >> /etc/apt/apt.conf
-
-# Install "PHP Extentions", "libraries", "Software's"
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y --allow-downgrades --allow-remove-essential \
+RUN set -eux \
+    # Add the "PHP 7" ppa
+    && apt-get install -y software-properties-common \
+    && add-apt-repository -y ppa:ondrej/php \
+    #
+    #--------------------------------------------------------------------------
+    # Software's Installation
+    #--------------------------------------------------------------------------
+    #
+    && echo 'DPkg::options { "--force-confdef"; };' >> /etc/apt/apt.conf \
+    # Install "PHP Extentions", "libraries", "Software's"
+    && apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y --allow-downgrades --allow-remove-essential \
         --allow-change-held-packages \
         php7.2-cli \
         php7.2-common \
@@ -65,16 +63,11 @@ RUN apt-get update && \
         nano \
         tree \
         postgresql-client \
-    && apt-get clean
-
-#####################################
-# Composer:
-#####################################
-
-# Install composer and add its bin to the PATH.
-RUN curl -s http://getcomposer.org/installer | php && \
-    echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
-    mv composer.phar /usr/local/bin/composer
-
-# Source the bash
-RUN . ~/.bashrc
+    && apt-get clean \
+    #####################################
+    # Composer:
+    #####################################
+    # Install composer and add its bin to the PATH.
+    && curl -s http://getcomposer.org/installer | php \
+    && echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc \
+    && mv composer.phar /usr/local/bin/composer
