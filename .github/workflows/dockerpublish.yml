@@ -3,6 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches: '**'
+    tags: '**'
   schedule:
   - cron: 0 0 * * 6
 
