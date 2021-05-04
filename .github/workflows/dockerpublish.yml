@@ -3,6 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches: '**'
+    tags: '**'
   schedule:
   - cron: 0 0 * * 6
 
@@ -27,6 +28,7 @@ jobs:
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=ref,event=branch
+            type=ref,event=tag
             type=semver,pattern={{version}}
             type=raw,value=latest
 
