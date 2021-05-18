@@ -32,6 +32,7 @@ jobs:
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=ref,event=tag
+            type=ref,event=branch            
             type=semver,pattern={{version}}
             type=raw,value=latest
 
