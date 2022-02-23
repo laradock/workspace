@@ -63,6 +63,7 @@ RUN set -eux \
         tree \
         postgresql-client \
     && apt-get clean \
+    && update-alternatives --set php /usr/bin/php8.0 \
     #####################################
     # Composer:
     #####################################
