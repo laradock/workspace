@@ -68,6 +68,6 @@ RUN set -eux \
     # Composer:
     #####################################
     # Install composer and add its bin to the PATH.
-    && curl -s http://getcomposer.org/installer | php \
+    && curl -s https://getcomposer.org/installer | php \
     && echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc \
     && mv composer.phar /usr/local/bin/composer
