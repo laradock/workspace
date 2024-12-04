@@ -5,10 +5,9 @@ on:
     branches: '**'
     tags: '**'
   pull_request:
-    branches:
-      - 'master'
+    branches: '**'
   schedule:
-  - cron: 0 0 * * 6
+    - cron: 0 0 * * 6
 
 jobs:
   build:
@@ -53,5 +52,5 @@ jobs:
         with:
           file: Dockerfile-${{ matrix.php_version }}
           platforms: linux/amd64,linux/arm64,linux/386
-          push: ${{ (github.repository == 'laradock/workspace') && (github.ref == 'refs/heads/master') }}
+          push: ${{ (github.event_name != 'pull_request') && (github.repository == 'laradock/workspace') && (github.ref == 'refs/heads/master') }}
           tags: ${{ steps.meta.outputs.tags }}
