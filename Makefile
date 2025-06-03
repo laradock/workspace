@@ -1,28 +1,15 @@
+.PHONY: build all all-nc
+
+VERSIONS = 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2 8.3 8.4
 
 build: all
 
 all:
-	docker build -f ./Dockerfile-5.6 -t php-fpm:dev-5.6 .
-	docker build -f ./Dockerfile-7.0 -t php-fpm:dev-7.0 .
-	docker build -f ./Dockerfile-7.1 -t php-fpm:dev-7.1 .
-	docker build -f ./Dockerfile-7.2 -t php-fpm:dev-7.2 .
-	docker build -f ./Dockerfile-7.3 -t php-fpm:dev-7.3 .
-	docker build -f ./Dockerfile-7.4 -t php-fpm:dev-7.4 .
-	docker build -f ./Dockerfile-8.0 -t php-fpm:dev-8.0 .
-	docker build -f ./Dockerfile-8.1 -t php-fpm:dev-8.1 .
-	docker build -f ./Dockerfile-8.2 -t php-fpm:dev-8.2 .
-	docker build -f ./Dockerfile-8.3 -t php-fpm:dev-8.3 .
-	docker build -f ./Dockerfile-8.4 -t php-fpm:dev-8.4 .
+	@for v in $(VERSIONS); do \
+		docker build -f ./Dockerfile-$$v -t php-fpm:dev-$$v . ; \
+	done
 
 all-nc:
-	docker build -f ./Dockerfile-5.6 -t php-fpm:dev-5.6 --no-cache --pull .
-	docker build -f ./Dockerfile-7.0 -t php-fpm:dev-7.0 --no-cache --pull .
-	docker build -f ./Dockerfile-7.1 -t php-fpm:dev-7.1 --no-cache --pull .
-	docker build -f ./Dockerfile-7.2 -t php-fpm:dev-7.2 --no-cache --pull .
-	docker build -f ./Dockerfile-7.3 -t php-fpm:dev-7.3 --no-cache --pull .
-	docker build -f ./Dockerfile-7.4 -t php-fpm:dev-7.4 --no-cache --pull .
-	docker build -f ./Dockerfile-8.0 -t php-fpm:dev-8.0 --no-cache --pull .
-	docker build -f ./Dockerfile-8.1 -t php-fpm:dev-8.1 --no-cache --pull .
-	docker build -f ./Dockerfile-8.2 -t php-fpm:dev-8.2 --no-cache --pull .
-	docker build -f ./Dockerfile-8.3 -t php-fpm:dev-8.3 --no-cache --pull .
-	docker build -f ./Dockerfile-8.4 -t php-fpm:dev-8.4 --no-cache --pull .
+	@for v in $(VERSIONS); do \
+		docker build -f ./Dockerfile-$$v -t php-fpm:dev-$$v --no-cache --pull . ; \
+	done
