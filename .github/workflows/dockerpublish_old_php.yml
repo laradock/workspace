@@ -1,6 +1,7 @@
 name: Docker Image CI (Old PHP Versions)
 
 on:
+  workflow_dispatch:
   push:
     branches: '**'
     tags: '**'
